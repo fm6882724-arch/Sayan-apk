@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SayanMode" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/sayan_bg_dark</item>
+        <item name="android:statusBarColor">@color/sayan_bg_dark</item>
+        <item name="android:navigationBarColor">@color/sayan_bg_dark</item>
+        <item name="colorPrimary">@color/sayan_neon_purple</item>
+        <item name="colorPrimaryDark">@color/sayan_deep_purple</item>
+        <item name="colorAccent">@color/sayan_fuchsia_glow</item>
+    </style>
+</resources>

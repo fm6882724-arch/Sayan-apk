@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sayan_bg_dark">#040108</color>
+    <color name="sayan_panel_bg">#F2090212</color>
+    <color name="sayan_panel_surface">#140526</color>
+    <color name="sayan_neon_purple">#D900FF</color>
+    <color name="sayan_fuchsia_glow">#E879F9</color>
+    <color name="sayan_deep_purple">#6B00B8</color>
+    <color name="sayan_status_online">#00FF33</color>
+    <color name="sayan_white">#FFFFFF</color>
+    <color name="sayan_muted">#C4B5FD</color>
+</resources>

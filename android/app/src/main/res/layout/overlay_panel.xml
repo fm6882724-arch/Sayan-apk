@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sayanmode.app.OverlayRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/overlayPanelRoot"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sayan_panel"
+    android:elevation="16dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Draggable Header Bar -->
+        <LinearLayout
+            android:id="@+id/overlayDragHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_sayan_crown" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.08"
+                    android:text="SAYAN MODE"
+                    android:textColor="@color/sayan_fuchsia_glow"
+                    android:textSize="13sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/overlayStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ONLINE • UI ONLY"
+                    android:textColor="@color/sayan_status_online"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnCollapseOverlay"
+                android:layout_width="34dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_sayan_pill_inactive"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:text="—"
+                android:textColor="@color/sayan_white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnCloseOverlay"
+                android:layout_width="34dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_sayan_pill_inactive"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:text="×"
+                android:textColor="@color/sayan_fuchsia_glow"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Mode Tabs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tabAimBtn"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sayan_pill_active"
+                android:minHeight="0dp"
+                android:text="AIM"
+                android:textColor="@color/sayan_white"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/tabEspBtn"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sayan_pill_inactive"
+                android:minHeight="0dp"
+                android:text="ESP"
+                android:textColor="@color/sayan_muted"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/tabBypassBtn"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sayan_pill_inactive"
+                android:minHeight="0dp"
+                android:text="BYPASS"
+                android:textColor="@color/sayan_muted"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Scrollable Interface-Only Controls -->
+        <ScrollView
+            android:id="@+id/overlayScrollContent"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:fadeScrollbars="false">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- AIM MODE Section -->
+                <LinearLayout
+                    android:id="@+id/sectionAim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <CheckBox
+                        android:id="@+id/chkEnableFunctions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="Enable Functions"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkAimbotLegit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="Aimbot Legit"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkAimbotRage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="Aimbot Rage"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkAimbotShoulder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="Aimbot Shoulder"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkAimbotSilent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="Aimbot Silent"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkNoRecoil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="No Recoil"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- ESP MODE Section -->
+                <LinearLayout
+                    android:id="@+id/sectionEsp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/chkEspLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="ESP Line"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkEspBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="ESP Box"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkEspName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="ESP Name"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkEspHealth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="ESP Health"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkEspDistance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="ESP Distance"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtEspColorValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ESP Color: 0"
+                            android:textColor="@color/sayan_white"
+                            android:textSize="12sp" />
+
+                        <SeekBar
+                            android:id="@+id/seekEspColor"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:max="360"
+                            android:progress="0"
+                            android:progressTint="@color/sayan_neon_purple"
+                            android:thumbTint="@color/sayan_fuchsia_glow" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- BYPASS MODE Section -->
+                <LinearLayout
+                    android:id="@+id/sectionBypass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/chkOnlineBypass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="Online Bypass Status"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/chkOfflineBypass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/sayan_neon_purple"
+                        android:text="Offline Bypass Status"
+                        android:textColor="@color/sayan_white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </FrameLayout>
+        </ScrollView>
+
+        <!-- Transparency & Resize Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtOpacityLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Opacity 95%"
+                    android:textColor="@color/sayan_muted"
+                    android:textSize="11sp" />
+
+                <SeekBar
+                    android:id="@+id/seekOpacity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="75"
+                    android:progress="70"
+                    android:progressTint="@color/sayan_neon_purple"
+                    android:thumbTint="@color/sayan_fuchsia_glow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSizeSmall"
+                    android:layout_width="30dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/bg_sayan_pill_inactive"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:text="S"
+                    android:textColor="@color/sayan_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btnSizeMedium"
+                    android:layout_width="30dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_sayan_pill_active"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:text="M"
+                    android:textColor="@color/sayan_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btnSizeLarge"
+                    android:layout_width="30dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_sayan_pill_inactive"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:text="L"
+                    android:textColor="@color/sayan_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btnResetOverlay"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_sayan_pill_inactive"
+                    android:minHeight="0dp"
+                    android:text="RESET ALL"
+                    android:textColor="@color/sayan_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/overlayResizeGrip"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_sayan_pill_inactive"
+                    android:gravity="center"
+                    android:text="↘"
+                    android:textColor="@color/sayan_fuchsia_glow"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.sayanmode.app.OverlayRootLayout>

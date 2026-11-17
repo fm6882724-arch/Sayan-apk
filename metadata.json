@@ -1,0 +1,6 @@
+{
+  "name": "SAYAN MODE",
+  "description": "SAYAN MODE Panel — Secure key-authenticated gaming interface with AIM MODE, ESP MODE, BYPASS MODE, SETTINGS, and role-based admin key management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

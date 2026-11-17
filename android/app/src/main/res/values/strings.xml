@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SAYAN MODE</string>
+    <string name="overlay_channel_name">SAYAN MODE Overlay</string>
+    <string name="overlay_notification_title">SAYAN MODE Floating Panel</string>
+    <string name="overlay_notification_text">Visual interface active. Tap crown tab to expand or close.</string>
+    <string name="overlay_permission_prompt">Allow "Display over other apps" to show the floating SAYAN MODE panel over your game.</string>
+</resources>
